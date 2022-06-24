@@ -15,3 +15,17 @@ export interface GetQueryLessonsResponse {
     }[];
 
 }
+
+export interface GetLessonBySlugResponse {
+    lesson: {
+        title: string;
+        videoId: string;
+        description: string;
+        teacher: {
+            bio: string;
+            avatarURL: string;
+            name: string;
+        }
+        
+    }
+}

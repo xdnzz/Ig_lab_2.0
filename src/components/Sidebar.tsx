@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { Lesson } from "./Lesson";
-import {GetQueryLessonsResponse} from '../types/types_lessons';
+import {GetQueryLessonsResponse} from '../types/types';
 import {GET_LESSONS_QUERY} from '../gql/lessons_requisitions'
 
 
