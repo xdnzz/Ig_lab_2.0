@@ -12,17 +12,22 @@ interface VideoProps {
 
 export function Video(props: VideoProps) {
     const {data} = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY, {
+        
         variables: {
             slug: props.lessonSlug
         }
+        
     });
 
 
     if(!data){
         return <div className="flex-1"><h1>Carregando...</h1></div>
     }
+
+    
     return (
         <div className="flex-1">
+            
             <div className="bg-black flex justify-center">
                 <div className="h-full  w-full  max-w-[1100px] max-h-[60vh] aspect-video">
                     <Player>
@@ -59,6 +64,7 @@ export function Video(props: VideoProps) {
 
                         <a href="" className="p-4 text-sm bg-green-500 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-green-700 transition-colors">
                             <DiscordLogo size={24} />
+                            
                             Comunidade do Discord
                         </a>
                         <a href="" className="p-4 text-sm border border-blue-500 text-blue-500 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-blue-500  hover:text-gray-900 transition-colors">

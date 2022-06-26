@@ -13,10 +13,10 @@ export const GET_LESSONS_QUERY = gql`
 `;
 
 export const GET_LESSON_BY_SLUG_QUERY = gql`
-query GetLessonBySlug($slug:String) {
+query GetLessonBySlug($slug: String) {
   lesson(where: {slug: $slug}) {
-    id
     title
+    videoId
     description
     teacher {
       name
@@ -25,4 +25,14 @@ query GetLessonBySlug($slug:String) {
     }
   }
 }
+`
+
+
+export const CREATE_SUBSCRIPTION_MUTATION = gql`
+mutation CreateSubscriber($name: String!, $email: String!) {
+  createSubscriber(data: {name: $name, email: $email}) {
+    id
+  }
+}
+
 `
